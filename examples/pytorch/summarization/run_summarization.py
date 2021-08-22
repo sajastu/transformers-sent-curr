@@ -257,8 +257,8 @@ def main():
     # We now keep distinct sets of args, for a cleaner separation of concerns.
     parser = HfArgumentParser((ModelArguments, DataTrainingArguments, Seq2SeqTrainingArguments))
     model_args, data_args, training_args = parser.parse_json_file(json_file=os.path.abspath(sys.argv[-1]))
-    import pdb;
-    pdb.set_trace()
+    # import pdb;
+    # pdb.set_trace()
 
     # if len(sys.argv) == 2 and sys.argv[-1].endswith(".json"):
     #     If we pass only one argument to the script and it's the path to a json file,
