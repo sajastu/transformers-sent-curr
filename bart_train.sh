@@ -2,7 +2,7 @@
 
 
 CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py --task_mode abstractive \
-python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py \
+python -m torch.distributed.launch --nproc_per_node=2 examples/pytorch/summarization/run_summarization.py \
     --task_mode exttractive \
     --model_name_or_path facebook/bart-large \
     --do_train \
@@ -24,7 +24,10 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --test_file $DS_BASE_DIR/validation.json \
     --predict_with_generate
 
-CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py --task_mode abstractive \
+CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py  \
+
+python -m torch.distributed.launch --nproc_per_node=2 examples/pytorch/summarization/run_summarization.py \
+    --task_mode abstractive \
     --model_name_or_path facebook/bart-large \
     --do_train \
     --do_eval \
