@@ -438,6 +438,7 @@ def main():
     def preprocess_function(examples):
 
         inputs = examples[text_column]
+        inputs = [i.replace('</s><s> ', '') for i in inputs]
         targets = examples[summary_column]
         ext_labels = examples['rg_labels']
         inputs = [prefix + inp for inp in inputs]
