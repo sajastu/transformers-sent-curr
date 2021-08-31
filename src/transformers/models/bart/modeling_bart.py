@@ -1564,6 +1564,7 @@ class BartForConditionalGeneration(BartPretrainedModel):
 
         lm_logits = self.lm_head(outputs.last_hidden_state) + self.final_logits_bias
 
+##test
         masked_lm_loss = None
         if labels is not None:
             # loss_fct = CrossEntropyLoss()
