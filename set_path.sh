@@ -10,9 +10,11 @@ done
 
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export MODEL=bart-ext
-export M_ID=pretrained_rg_largQ
+export M_ID=bart-curr
 
-export DS_BASE_DIR=$SAVE_MODEL_DIR/tldrQ/
+#export DS_BASE_DIR=$SAVE_MODEL_DIR/tldrQ/
+export DS_BASE_DIR=/tmp/transformers/reddit_tifu
+
 export MODEL_OUTPUT_DIR=$SAVE_MODEL_DIR/saved_models/$MODEL/$M_ID
 
 echo "SAVE_MODEL_DIR is $SAVE_MODEL_DIR"
