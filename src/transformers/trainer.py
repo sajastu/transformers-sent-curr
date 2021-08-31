@@ -287,7 +287,7 @@ class Trainer:
         self.hp_name = None
         self.deepspeed = None
         self.is_in_train = False
-        self.use_second_opt = False
+        self.use_second_opt = True
         # self.sigma = nn.Parameter(torch.Tensor([0.5, 0.5]))
 
 
