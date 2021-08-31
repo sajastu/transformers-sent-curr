@@ -9,8 +9,8 @@ do
 done
 
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
-export MODEL=bart
-export M_ID=bart-original
+export MODEL=bart-ext
+export M_ID=bart-sentence
 
 #export DS_BASE_DIR=$SAVE_MODEL_DIR/tldrQ/
 export DS_BASE_DIR=/tmp/transformers/reddit_tifu

@@ -336,7 +336,7 @@ class BartEncoderLayer(nn.Module):
 
 
 # class BartDecoderLayerSent(nn.Module):
-class BartDecoderLayerSent(nn.Module):
+class BartDecoderLayer(nn.Module):
     def __init__(self, config: BartConfig):
         super().__init__()
         self.embed_dim = config.d_model
@@ -502,7 +502,7 @@ class BartDecoderLayerSent(nn.Module):
         return outputs
 
 # class BartDecoderLayerNormal(nn.Module):
-class BartDecoderLayer(nn.Module):
+class BartDecoderLayerNormal(nn.Module):
     def __init__(self, config: BartConfig):
         super().__init__()
         self.embed_dim = config.d_model
