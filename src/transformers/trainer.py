@@ -290,8 +290,7 @@ class Trainer:
         self.use_second_opt = False
         # self.sigma = nn.Parameter(torch.Tensor([0.5, 0.5]))
 
-
-
+####
         # self.loss_ext = torch.nn.BCELoss(reduction='none')
         # self.loss_ext = torch.nn.MSELoss(reduction='none')
 
