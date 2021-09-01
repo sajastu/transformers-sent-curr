@@ -962,8 +962,8 @@ class BartEncoder(BartPretrainedModel):
             if self.training and (dropout_probability < self.layerdrop):  # skip the layer
                 layer_outputs = (None, None)
             else:
-                # if getattr(self.config, "gradient_checkpointing", False) and self.training:
-                if True and self.training:
+                if getattr(self.config, "gradient_checkpointing", False) and self.training:
+                # if True and self.training:
 
                     def create_custom_forward(module):
                         def custom_forward(*inputs):
