@@ -336,7 +336,7 @@ class BartEncoderLayer(nn.Module):
 
 
 # class BartDecoderLayerSent(nn.Module):
-class BartDecoderLayer(nn.Module):
+class BartDecoderLayerSent(nn.Module):
     def __init__(self, config: BartConfig):
         super().__init__()
         self.embed_dim = config.d_model
@@ -502,7 +502,7 @@ class BartDecoderLayer(nn.Module):
         return outputs
 
 # class BartDecoderLayerNormal(nn.Module):
-class BartDecoderLayerNormal(nn.Module):
+class BartDecoderLayer(nn.Module):
     def __init__(self, config: BartConfig):
         super().__init__()
         self.embed_dim = config.d_model
@@ -1451,6 +1451,44 @@ class SuperLoss(nn.Module):
         sigma = torch.from_numpy(sigma).cuda()
         return sigma
 
+class SuperLossMSE(nn.Module):
+
+    def __init__(self, tau=1.5, lam=0.9, batch_size=1):
+        super(SuperLossMSE, self).__init__()
+        self.tau = tau
+        self.lam = lam
+        self.loss_fct = MSELoss(reduction='none')
+        self.batch_size = batch_size
+        self.processed_docs = 0
+        self.accumulative_loss = 0
+
+    def set_update_tau(self):
+        self.tau = self.accumulative_loss / self.processed_docs
+
+    def forward(self, logits, targets):
+
+        l_i = self.loss_fct(logits, targets,).detach()
+        sigma = self.sigma(l_i)
+        loss = (self.loss_fct(logits, targets) - self.tau) * sigma + self.lam * (torch.log(sigma) ** 2)
+        loss = loss.sum() / self.batch_size
+
+        # update tau
+        # self.accumulative_loss += loss
+        # self.processed_docs += 1
+        # self.set_update_tau()
+
+        return loss
+
+    def sigma(self, l_i):
+        x = torch.ones(l_i.size()) * (-2 / math.exp(1.))
+        x = x.cuda()
+        y = 0.5 * torch.max(x, (l_i - self.tau) / self.lam)
+        y = y.cpu().detach().numpy()
+        sigma = np.exp(-lambertw(y))
+        sigma = sigma.real.astype(np.float32)
+        sigma = torch.from_numpy(sigma).cuda()
+        return sigma
+
 
 @add_start_docstrings(
     "The BART Model with a language modeling head. Can be used for summarization.", BART_START_DOCSTRING
@@ -1749,6 +1787,7 @@ class BartForSequenceClassification(BartPretrainedModel):
         )
         self.model._init_weights(self.classification_head.dense)
         self.model._init_weights(self.classification_head.out_proj)
+        self.super_loss = SuperLossMSE()
 
     @add_start_docstrings_to_model_forward(BART_INPUTS_DOCSTRING)
     @add_code_sample_docstrings(
@@ -1836,10 +1875,14 @@ class BartForSequenceClassification(BartPretrainedModel):
             ext_labels_padded[ext_labels_padded == -100] = 0
             # sent_scores = self.ext_layer(bart_sent, mask=ext_labels.ge(-1))
             sent_scores = self.classification_head(bart_sent, mask=ext_labels.ge(-1))
-            loss_fct = torch.nn.MSELoss(reduction='none')
-            loss = loss_fct(sent_scores, ext_labels_padded.float())
+            # loss_fct = torch.nn.MSELoss(reduction='none')
+
+            loss = self.super_loss(sent_scores, ext_labels_padded.float())
+
+            # loss = loss_fct(sent_scores, ext_labels_padded.float())
             loss = (loss * ext_labels.ge(-1).float()).sum()
             loss = (loss / loss.numel())
+
         return Seq2SeqSequenceClassifierOutput(
             loss=loss,
             logits=sent_scores,
