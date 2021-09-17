@@ -32,7 +32,9 @@ for f in glob.glob("blink/*.txt"):
 
     summary_sents = sentencizer(str)
     src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
+    sent_num = sum(1 for _ in src_sentences_tkns)
 
+    src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
     iter = 0
     counter = 0
@@ -44,7 +46,7 @@ for f in glob.glob("blink/*.txt"):
         src_tkns.append(sent_tkns)
         counter += len(sent_tkns)
 
-        if 900 < counter or j == len(src_sentences_tkns)-1:
+        if 900 < counter or j == sent_num-1:
             ent = {
                 'id': f + f'-{iter}',
                 'document': '</s><s> '.join([' '.join(s) for s in src_tkns]),
