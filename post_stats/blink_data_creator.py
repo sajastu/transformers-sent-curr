@@ -139,7 +139,7 @@ for f in glob.glob("blink/*.txt"):
 
     # ext_labels, selected_sent_ids = greedy_selection(src_tkns, ['this', 'is', 'the', 'target'], 1)
     ent = {
-        'document': '</s><s> '.join(src_tkns),
+        'document': '</s><s> '.join([' '.join(s) for s in src_tkns]),
         'summary': 'This is the gold',
         'ext_labels': [0 for s in range(len(src_tkns))],
         'rg_labels': [0 for s in range(len(src_tkns))]
