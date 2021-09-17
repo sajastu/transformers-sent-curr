@@ -1,0 +1,179 @@
+LW on whether or not I whipped this pretty good.The FDA is ready for launch.Ignition, Falcon nine has cleared the tower.
+
+Two, nine, eight, booster.Ignition, six, five, four, three, two, one.
+
+Good evening.It's Tuesday, November 24th, and you're looking at a live view of Falcon nine as it awaits its nine 13 P M Eastern time launch from Pad 40 at Cape Canaveral.Cape Canaveral Air Force Station.Hello from SpaceX headquarters in Hawthorne, California.My name is Kate Taste'S
+
+and I'm a senior certification engineer here at SpaceX.You're watching a live webcast for our 16th StarLink mission and our twenty third mission this year.This mission is also notable because with today's launch, we are attempting to fly a Falcon nine booster for the seventh time.
+
+If you've been following our progress, you also know that we recently launched our better than nothingbeta program in the northern U s and Southern Canada.So I'll be sure to talk all about that a little bit later in the webcast.We're currently at t minus nine and a half minutes till launch, and all systems are go for an all time lift off this evening.
+
+Good evening.My name is Chiva Bharadwaj, and I'm a space operations engineer here at SpaceX.On your screen is a live view of Falcon nine.That's our Two-Stage liquid fueled vehicle.
+
+the Falcon nine is 70 meters tall, which is greater than the Wingspan of a 747 aircraft.As Kate had mentioned previously, we are flying today's booster for the seventh time.That's a first for Falcon nine.
+
+This rocket previously flew on the Telstar 118 vintage mission, the Iridium seven mission, as well as four StarLink missions.Now, Falcon nine was designed for 10 or more flights with a minimal Refurbishment in between each flight.
+
+And today's flight will get US closer to that goal.The bottom two thirds of the vehicle is what we refer to as the first stage.You can actually tell that, tell it from the seat markings left over from its previous six flights.
+
+Now, the first two stages job is to accelerate the vehicle through the earth's atmosphere into space with the help of nine Merlon engines that it has at the base of the rocket.
+
+We will be attempting to recover this first stage for the seventh time on our drone ship, named, of course, I still love you.Pictured on your screen about six hundred thirty or so kilometers down range.
+
+Now, on top of the first stage is our black carbon fiber inner stage.And on top of that is Falcon nine second stage.It has a single Merlon vacuum, or Izembek engine.
+
+And once the first and second stages separate, about two and a half minutes into the mission, that Merrilyn vacuum engine will ignite and carry the 60 Starling satellites into an elliptical orbit around planet earth.
+
+Now, Falcon nine has been loading Propellant since about t minus thirty five minutes.We use a rocket grade kerosene, or rocket Propellant one, Arpi one, as our fuel, and super chilled liquid oxygen, or Lockes, as our Oxidizer to power the Falcon nine.
+
+Now Propellants are nearly fully loaded on both the first and second stages, where we will be continuing to top up the the liquid oxygen until the final minutes of the Countdown.Now, the very top of the rocket is our nose cone structure.
+
+That's what we call the satellite Fering.That's where the stack of those 60 StarLink satellites is safely housed.The Fairings job is to protect those satellites from Aero thermal heating, aerodynamic loads and contamination during ascent.
+
+And once we reach the vacuum of space, we'll actually Jettison them back as the second stage will continue on its journey to orbit.We are flying a flight proven faring today.
+
+It'll be the second flight for one of the Haves and the third flight for the other.And our recovery vessels, mischief and go Searcher, will be attempting to recover those varying halves today by scooping them out of the water.
+
+Now, a quick update on the weather.We've been tracking some minor cumulus clouds and actually wind in the area.But overall, we are at an 80 percent chance of go.So keeping an eye on those winds.But other than that, vehicle satellites, weather and the range are looking good for an On-Time Liftoff just a few minutes from now.
+
+As many of you know, StarLink is a Constellation of satellites that can provide high speed, low Latency Internet all over the globe, particularly in remote or rural areas where Connectivity is limited or completely unavailable.To date, StarLink, Spaceless SpaceX has launched nearly 900 StarLink satellites to orbit.Less than a month ago, we rolled out our better than nothing Beita service to the northern U. S, and just last week, we rolled out service to parts of Southern Canada.
+
+During our first public beta, users can expect to see data speeds vary from 50 Megabits per second to one hundred and fifty Megabits per second, and Latency vary from 20 Milliseconds to 40 Milliseconds.
+
+There will also be brief periods of no Connectivity at all.As we launched more satellites and stall more ground stations and improve our networking software, data speed, Latency and Uptime will all improve dramatically.
+
+For Latency, we expect to achieve 16 to 19 Milliseconds by summer 2021.Right now, our beta program is invitation only, and it is based entirely on your low Keeshan within the northern U. S and Southern Canada.
+
+We are focused on rural and remote areas where there is no easy access to fiber or Cable.Now on your screen, there you see an example of one of our service areas, or what we call a cell.
+
+This particular cell is in an area of Minnesota near the town of hit at all.Hey, hit it all, folks.So based on this example, if you lived in Hiroto Holly Winnipeg junction or the nearby area, we could probably service you.
+
+But if, for example, you lived in Lake Park, you'd be just outside of our current coverage area.Now we have cells like this all over the northern US.And Canada within the 45 to 53 degree latitudes.
+
+And with every launch of StarLink satellites, we enable our team to serve more and more of these cells.If you're hoping to receive an invite, all you need is a bit of patience.At our current pace, we expect it to expand our BITA and a notable way very early next year, in the late January, February Timeframe.
+
+If that sounds interesting to you, head over to StarLink DOT COM and sign up for just over four minutes away from Liftoff, Falcon nine is now moving into the final stages of Countdown.Now, at this point, the first and second stages are fully loaded with Rp one and nearly fully loaded with liquid oxygen.There's almost a million pounds of both of those Propellants on the vehicle.Super chill.
+
+That liquid oxygen, which I mentioned earlier, is our Propellant Oxidizer, is actually What's creating that White cloud that you see coming off of Falcon nine inner stage.That's what happens when that cold liquid oxygen comes into contact with the moist Florida air and causes water vapor to condense into clouds.
+
+We'll be continuing to top up the liquid oxygen on both the first and second stage.We'll expect to hear a call out here for Lockes load close out on the first stage at about t minus three minutes.
+
+And then about a minute after that, t minus two minutes, we'll hear a similar call out for the second stage.And you can really get a sense of the wind right on the pad from the streams from the liquid oxygenVenting off the stage.
+
+Tucker verification
+
+now coming up.At about again, we'll have a t minusTwo minutesLuxford close out on the second stage.And then a t minus 60 seconds, Falcon nine will transition into startup.
+
+That means that the rockets internal flight computers have taken over to the launch Countdown, and they'll continue to have control of the vehicle through the rest of the mission at this point.These Starlike Payload also continues to look healthy.
+
+Falcon nine team not tracking any issues on the vehicle.The big watch item right now is the winds.They were projected to dip right around the launch window, again, about two minutes away from now.Keeping an eye on those, making sure that we don't violate any launch commit criteria.
+
+Wide shot there, as you like.Up wide shot there of the pad.And the call from the prop team that stage two locks loading is complete, but that Propellants are fully loaded on Falcon nine.Coming up here, we will have a pretty large white cloud of Venting coming from the transporter Erector.That's the Truss structure next to Falcon nine, and it provides power, cooling and Propellants, as well as communication to Falcon nine until Liftoff.
+
+So coming up, transition to startup on Falcon nine.
+
+And
+
+so again, that means from here, Falcon nine will begin to Pressurize those tanks, the first stage and second stage, think tanks, with our pressuring for flight.
+
+These go for launch.
+
+Great news from the launch director to press her plane, giving their go for flight.So with that, just 30 seconds to go, a vehicle looking healthy.It looks like we may have just squeaked in him over the winter.The county Starling satellites also continuing to look healthy.Why don't we listen in and watch Terminale Count?
+
+He was 15 seconds.Falcon nine is Configured for flight.Ten, nine, eight, seven, six, five, four, three, two, one, two.Ignition
+
+vehicles pitching down range, and when the Chamber pressures.
+
+Forty seconds into flight, Falcon nine successfully lifting off from pad 14 at Cape Canaveral Air Force Station, nominal, carrying those 60 StarLink satellites into orbit.This particular booster lighting up the Florida Coast for a seventh time.Now, we just began throttling down those Merrilyn 180 engines for maximum dynamic pressure, our Max Q.That's the point when the stresses on the vehicle are the highest from the combination of the vehicle speed and the density of the atmosphere.
+
+Execu and now that we're through the point of maximum dynamic pressure, the loads on the vehicle, the structural loads, are going to drop off as the density of the atmosphere continues to decrease.In fact, nine continuing to speed up.We're about a minute away from three events.First of those is main engine cutoff, or Mieko.That's where We'll shut off those nine Merrilyn one engines.
+
+You can actually see the plume expanding from them on your on your camera.You shut those down.Engine chills started in preparation for stage separation.
+
+That's where the first and second stages will separate from each other, for stage continuing on a Parabolic arc to make its way back to the drone ship, while the second stage continues on to the third event, second engine start number one.
+
+We actually just heard the call out there for Ambac chilling beginning.So during that third event, second engine start one will ignite the Merlin vacuum engine that will propel the second stage, along with the Starling satellites, into an elliptical orbit.And we Chillun those TURBO pumps with liquid oxygen, just to get them ready for Ignition
+
+and go.State separation, confirmed,
+
+left hand side of your screen.
+
+Ignition.
+
+First stage separating.Second stage Ignition.Love that green glow from the tap Ignition.But vehicles back on their way, coming up shortly.We'll expect to see Fehring deployment after the second stage, look for that on the right hand side of your screen, bearing separation.
+
+Confirmed.
+
+Beautiful shot there of those darling satellites, finally getting to see space directly.We know that we're outside of the atmosphereThewe don't need those Fehring hands anymore, so We'll just come back to earth to recover them.As a reminder, we do have a recovery ships mischief and go Searcher waiting at the Atlantic to scoop up both of those faring Harps.
+
+On the left hand side of your screen there, we saw the very last remnants of Nightlights visible off the Florida coast, as a pretty awesome sight.There is Falcon nine lifted off.Now there we can see second stage with a healthy glow there on the back engine.As second stage heads towards its targeted drop off orbit, the first stage will execute two burns in order to make its way back to earth.
+
+Now, if you happen to have followed along with our most recent launch this past Saturday, where we launch out of VandenBerg Air Force base, Muta, we performed three maneuvers in that instance because we were returning to launch site where we were landing the first stage back on land tonight.
+
+We are landing on the drone ship has ever said before?Of course, I still love you.So we only need to perform two maneuvers because we are continuing the arc trajectory of the first stage.
+
+So that first burn is the entry burn, and we will reignite three of the nine and MONDI engines at the base of the first stage.And this will help to slow that stage down as it Reenters the upper part of the earth's atmosphere.
+
+And then the second burn is the landing burn.This is a single engine burn that brings the vehicle speed down rapidly in order to make a soft landing on a nominal trajectory Internship.
+
+So we heard there that the vehicles on nominal trajectory.That's good, good news there.At this point in time, the first stage has reached apogee and is now starting its trip back down to the ocean.
+
+Our drone ship is parked a couple hundred miles off the coast of Florida in the Atlantic Ocean.It is, as you saw, a nighttime launch, and Unfortunately, we can't really see anything.So we're
+
+we don't have very good first stage footage to show you at this point in time.But we will bring that back in once we get some landing burn action, Reentry burn action.Checking in.On second stage, everything continues to look good.
+
+The 60 Starling'S satellites that are on board today are joining the Constellation of nearly 900 that We've already placed on orbit.These satellites are designed to provide high speed, low Latency Internet to folks like US here on earth.And this is especially helpful to for places where good Internet is hard to access.
+
+First stage is continuing to coast, and it uses nothing but Griffins for that steering, as well as occasional nitrogen gas bursts for attitude control.
+
+Stage one, FDA says, safety.
+
+So on your left hand side of the screen, yes, we will see the entry burn beginning.
+
+Start up.
+
+And entry burn has begun.And this will last for about another 20 seconds.
+
+Again, this is the first of two maneuvers that the first stage will perform tonight.Stage on Interbrand shutdown and shutdown of first stage entry burn.
+
+So that burn notice to follow a nominal trajectory.
+
+That burn was designed to slow the booster down significantly as it Reenters the upper part of the upper parts of the earth's atmosphere.
+
+The next maneuver will be the landing burn.And it is the final one where we reignite just one single Merlin engine to make a soft landing on top of the drone ship.As we mentioned earlier, this is the seventh Transonic.
+
+We just heard that the booster is now Transonic, as it is Reentering the earth's atmosphere.As I was saying, this is the seventh successful launch for this booster, and that will make this the seventh recovery attempt.
+
+Everything's continuing to look good there.On the second stage, the internal guidance Ambac engine has begun to throttle down and start up there.We heard the call up that landing burn has begun.So we should see that coming to the screen here, just momentarily, to Abdiaziz Safet
+
+they drew on lending like the blue landing legs have deployed.
+
+Here it comes.
+
+Oh, right.
+
+And for the seventh time, this Falcon has landed.This marks are 60 first successful recovery of a Falcon.Nine first stage.
+
+And we have to go
+
+and As the smoke clears, we can get a good view there.And we just heard the call out that we hadSico one or second engine cut off one.So at this point in time, insertion and there we had heard the call out that we have good orbit for that second stage.So now that stage two is, it's going to coast in this orbit for a few minutes.
+
+During this time, it will start to spin along its central axis, giving the StarLink satellites the momentum that they need to space themselves out over time as they deploy.So we're going to take a quick break here, but we will be returning at t plus 14 minutes.So stick around.
+
+Expect the bosses signal cave,
+
+acquisition of Signal Newfoundland,
+
+expected loss of signal for Muda.
+
+Welcome back to our webcast for our StarLink launch today.Now, if you're just joining US, we had a successful Liftoff at nine 13 P M Eastern time.Successfully recovered our first stage for the seventh time.That's a first time for US.And you're currently looking at a live view of the second stage in a nominal orbit around planet earth.
+
+We're coming up on deployment of the StarLink satellites.You can see the stack of those on your screen.And just about 10 seconds now, over the course of the break, we began spinning the second stage along its central axis.That's to give those StarLink satellites a little bit of momentum upon separation.
+
+Looks like we have a visual there.Deploy confirmed.And call out of confirmation of StarLink deployment.So those 60 Starlike satellites gently floating away from the second stage.And because of the spin on the second stage, they'll start to space themselves out.
+
+Soon they'll deploy a solar array that they have on board.And then over the next few days and weeks, they'll distance themselves out further, using an Onboard iron Thruster to make their way to an operational orbit about five hundred fifty kilometers above the earth's surface.
+
+So overall, very exciting day for US at SpaceX.First time we have flown a booster for the seventh time.First time we have landed a booster for the seventh time.And of course, always lovely to see our deployment, Payload deployment, successful on the mission.
+
+And that will bring our webcast to a close this evening.Thank you to the range and FAA for supporting today's mission.And of course, thank you to all of our viewers, as well as those in the U s and Canada who have ordered StarLink under our public Bater program.If you haven't signed up yet and are interested in being part of our beta program, head over to StarLink DOT COM and sign up.Thanks for joining US, and have a great evening.

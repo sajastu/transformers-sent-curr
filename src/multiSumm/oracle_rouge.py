@@ -13,16 +13,16 @@ import re
 from multiprocessing import Pool
 from os.path import join as pjoin
 
+from tqdm import tqdm
 from datasets import load_metric
 from somajo import SoMaJo
 # import spacy
-from tqdm import tqdm
 
 # nlp = spacy.load("en_core_web_lg")
 # nlp.disable_pipe("parser")
 # nlp.enable_pipe("senter")
-# tokenizer = SoMaJo("en_PTB")
 # metric = load_metric("rouge")
+# tokenizer = SoMaJo("en_PTB")
 
 
 def _get_ngrams(n, text):

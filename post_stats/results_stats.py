@@ -3,7 +3,7 @@ import json
 from somajo import SoMaJo
 from tqdm import tqdm
 
-tokenizer = SoMaJo("de_CMC", split_camel_case=True)
+tokenizer = SoMaJo("en_PTB", split_camel_case=True)
 
 class Result():
     def __init__(self, path='', test=''):
@@ -63,5 +63,9 @@ class Result():
 
 if __name__ == '__main__':
     # r = Result('generated_predictions_lambda9ch24.txt')
+    r = Result('generated_predictions_bartSmall.txt')
+    r.compute_tokens()
+    r = Result('generated_predictions_bartCurr.txt')
+    r.compute_tokens()
     r = Result(test='../reddit_tifu/test.json')
     r.compute_tokens()
