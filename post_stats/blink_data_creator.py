@@ -122,8 +122,8 @@ cases = []
 
 for f in glob.glob("blink/*.txt"):
     str = ''
-    with open(f):
-        for l in f:
+    with open(f) as fR:
+        for l in fR:
             str += l.strip().lower()
             str += ' '
 
@@ -147,7 +147,7 @@ for f in glob.glob("blink/*.txt"):
     cases.append(ent)
 
 
-os.makedirs('../blink_test/')
+# os.makedirs('../blink_test/')
 with open('../blink_test/test.json', mode='w') as fW:
     for e in cases:
         json.dump(e, fW)
