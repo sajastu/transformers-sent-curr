@@ -6,7 +6,7 @@ with open('/trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9
         segmented_preds.append(l.strip())
 
 segmented_ids = []
-with open('../blink_test_segmented/test.json') as fR:
+with open('blink_test_segmented/test.json') as fR:
     for l in fR:
         segmented_ids.append(json.loads(l.strip())['id'])
 
@@ -20,7 +20,7 @@ for seg_id, seg_pred in zip(segmented_ids, segmented_preds):
         cases[case_id] += seg_pred
 
 
-with open('blink/final_preds.json', mode='w') as fW:
+with open('blink_test_segmented/final_preds.json', mode='w') as fW:
     for k, v in cases.items():
         json.dump(
             {'file': k,
