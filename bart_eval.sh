@@ -20,3 +20,5 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --predict_with_generate \
     --text_column document \
     --summary_column summary
+
+python post_stats/integrate_blink_preds.py
