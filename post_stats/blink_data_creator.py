@@ -46,7 +46,7 @@ for f in glob.glob("blink/*.txt"):
         src_tkns.append(sent_tkns)
         counter += len(sent_tkns)
 
-        if 900 < counter or j == sent_num-1:
+        if 512 < counter or j == sent_num-1:
             ent = {
                 'id': f + f'-{iter}',
                 'document': '</s><s> '.join([' '.join(s) for s in src_tkns]),
