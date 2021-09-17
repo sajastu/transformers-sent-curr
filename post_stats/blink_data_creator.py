@@ -37,14 +37,14 @@ for f in glob.glob("blink/*.txt"):
     iter = 0
     counter = 0
     src_tkns = []
-    for sentence in src_sentences_tkns:
+    for j, sentence in enumerate(src_sentences_tkns):
         sent_tkns = []
         for token in sentence:
             sent_tkns.append(token.text)
         src_tkns.append(sent_tkns)
         counter += len(sent_tkns)
 
-        if 900 < counter:
+        if 900 < counter or j == len(src_sentences_tkns)-1:
             ent = {
                 'id': f + f'-{iter}',
                 'document': '</s><s> '.join([' '.join(s) for s in src_tkns]),
@@ -57,7 +57,7 @@ for f in glob.glob("blink/*.txt"):
             iter +=1
             src_tkns = []
 
-os.makedirs('../blink_test_segmented/')
+# os.makedirs('../blink_test_segmented/')
 with open('../blink_test_segmented/test.json', mode='w') as fW:
     for e in cases:
         json.dump(e, fW)
