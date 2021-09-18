@@ -25,16 +25,23 @@ cases = []
 
 for f in glob.glob("blink/*.txt"):
     str = ''
+    token_counter = 0
     with open(f) as fR:
         for l in fR:
-            str += l.strip().lower()
-            str += ' '
+            if len(l.strip()) > 0 :
+                str += l.strip().lower()
+                summary_sents = sentencizer(str)
+                src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
+                import pdb;pdb.set_trace()
+                token_count = sum(sum(1 for t in s) for s in src_sentences_tkns)
+                src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
-    summary_sents = sentencizer(str)
-    src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
-    sent_num = sum(1 for _ in src_sentences_tkns)
+                str += ' '
 
-    src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
+    # summary_sents = sentencizer(str)
+    # src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
+    # sent_num = sum(1 for _ in src_sentences_tkns)
+    # src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
     iter = 0
     counter = 0
