@@ -1,4 +1,5 @@
 import json
+import subprocess
 
 segmented_preds = []
 with open('/trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9b2de/saved_models/bart-ext/bart-curr/generated_predictions.txt') as fR:
@@ -34,9 +35,11 @@ with open('blink_test_segmented/final_preds.json', mode='w') as fW:
             fW
         )
         fW.write('\n')
+        subprocess.call(['gupload', 'blink_test_segmented/final_preds.json'])
 
 for k, pars in cases_par.items():
-    with open(f'blink_test_segmented/summary_{k}.json', mode='w') as fW:
+    with open(f'blink_test_segmented/blink_summary_{k.replace("blink/", "")}.json', mode='w') as fW:
         for ent in pars:
             json.dump(ent, fW)
             fW.write('\n')
+    subprocess.call(['gupload', f'blink_test_segmented/blink_summary_{k.replace("blink/", "")}.json'])
