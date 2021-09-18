@@ -35,12 +35,14 @@ for f in glob.glob("blink/*.txt"):
         for line_num, l in enumerate(fR):
             size -= len(l)
             if len(l.strip()) > 0 :
-                str += l.strip().lower()
+                str += l.strip()
                 summary_sents = sentencizer(str)
                 src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
                 token_count = sum(sum(1 for t in s) for s in src_sentences_tkns)
 
                 # if token_count > 350 or l.strip() == fR.readlines()[-1].strip():
+                if not size:
+                    print('yohoo last line')
                 if token_count > 350 or not size:
                     src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
@@ -48,7 +50,7 @@ for f in glob.glob("blink/*.txt"):
                     for j, sentence in enumerate(src_sentences_tkns):
                         sent_tkns = []
                         for token in sentence:
-                            sent_tkns.append(token.text)
+                            sent_tkns.append(token.text.lower())
                         src_tkns.append(sent_tkns)
 
                     ent = {
@@ -58,7 +60,6 @@ for f in glob.glob("blink/*.txt"):
                         'ext_labels': [0 for s in range(len(src_tkns))],
                         'rg_labels': [0 for s in range(len(src_tkns))]
                     }
-                    import pdb;pdb.set_trace()
                     cases.append(ent)
                     counter = 0
                     iter += 1
