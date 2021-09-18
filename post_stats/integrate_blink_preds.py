@@ -35,7 +35,7 @@ with open('blink_test_segmented/final_preds.json', mode='w') as fW:
             fW
         )
         fW.write('\n')
-        subprocess.call(['gupload', 'blink_test_segmented/final_preds.json'])
+subprocess.call(['gupload', 'blink_test_segmented/final_preds.json'])
 
 for k, pars in cases_par.items():
     with open(f'blink_test_segmented/blink_summary_{k.replace("blink/", "")}.json', mode='w') as fW:
