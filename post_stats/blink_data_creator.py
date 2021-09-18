@@ -72,13 +72,6 @@ for f in glob.glob("blink/*.txt"):
     # sent_num = sum(1 for _ in src_sentences_tkns)
     # src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
-    counter = 0
-    src_tkns = []
-
-        counter += len(sent_tkns)
-
-        if 512 < counter or j == sent_num-1:
-
 
 # os.makedirs('../blink_test_segmented/')
 with open('../blink_test_segmented/test.json', mode='w') as fW:
