@@ -28,8 +28,12 @@ iter = 0
 for f in glob.glob("blink/*.txt"):
     str = ''
     token_counter = 0
+    size = os.path.getsize(f)
+
     with open(f) as fR:
+
         for line_num, l in enumerate(fR):
+            size -= len(l)
             if len(l.strip()) > 0 :
                 str += l.strip().lower()
                 summary_sents = sentencizer(str)
@@ -37,7 +41,7 @@ for f in glob.glob("blink/*.txt"):
                 token_count = sum(sum(1 for t in s) for s in src_sentences_tkns)
 
                 # if token_count > 350 or l.strip() == fR.readlines()[-1].strip():
-                if token_count > 350 :
+                if token_count > 350 or not size:
                     src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
                     # should store
