@@ -22,6 +22,8 @@ def sentencizer(text):
 
 
 cases = []
+src_tkns = []
+iter = 0
 
 for f in glob.glob("blink/*.txt"):
     str = ''
@@ -32,39 +34,51 @@ for f in glob.glob("blink/*.txt"):
                 str += l.strip().lower()
                 summary_sents = sentencizer(str)
                 src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
-                import pdb;pdb.set_trace()
                 token_count = sum(sum(1 for t in s) for s in src_sentences_tkns)
-                src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
-                str += ' '
+
+                if token_count > 512:
+                    src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
+
+                    # should store
+                    for j, sentence in enumerate(src_sentences_tkns):
+                        sent_tkns = []
+                        for token in sentence:
+                            sent_tkns.append(token.text)
+                        src_tkns.append(sent_tkns)
+
+                    ent = {
+                        'id': f + f'-{iter}',
+                        'document': '</s><s> '.join([' '.join(s) for s in src_tkns]),
+                        'summary': 'This is the gold',
+                        'ext_labels': [0 for s in range(len(src_tkns))],
+                        'rg_labels': [0 for s in range(len(src_tkns))]
+                    }
+                    import pdb;pdb.set_trace()
+                    cases.append(ent)
+                    counter = 0
+                    iter += 1
+                    src_tkns = []
+
+                else:
+                    str += ' '
+                    src_tkns = []
+
+                    continue
+
 
     # summary_sents = sentencizer(str)
     # src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
     # sent_num = sum(1 for _ in src_sentences_tkns)
     # src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
-    iter = 0
     counter = 0
     src_tkns = []
-    for j, sentence in enumerate(src_sentences_tkns):
-        sent_tkns = []
-        for token in sentence:
-            sent_tkns.append(token.text)
-        src_tkns.append(sent_tkns)
+
         counter += len(sent_tkns)
 
         if 512 < counter or j == sent_num-1:
-            ent = {
-                'id': f + f'-{iter}',
-                'document': '</s><s> '.join([' '.join(s) for s in src_tkns]),
-                'summary': 'This is the gold',
-                'ext_labels': [0 for s in range(len(src_tkns))],
-                'rg_labels': [0 for s in range(len(src_tkns))]
-            }
-            cases.append(ent)
-            counter = 0
-            iter +=1
-            src_tkns = []
+
 
 # os.makedirs('../blink_test_segmented/')
 with open('../blink_test_segmented/test.json', mode='w') as fW:
