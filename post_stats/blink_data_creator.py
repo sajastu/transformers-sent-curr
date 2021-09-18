@@ -36,11 +36,7 @@ for f in glob.glob("blink/*.txt"):
                 src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
                 token_count = sum(sum(1 for t in s) for s in src_sentences_tkns)
 
-                import pdb;
-
-                pdb.set_trace()
-
-                if token_count > 350 or l is fR.readlines()[-1]:
+                if token_count > 350 or l.strip() == fR.readlines()[-1].strip():
                     src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
                     # should store
