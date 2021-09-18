@@ -59,6 +59,7 @@ for f in glob.glob("blink/*.txt"):
                     counter = 0
                     iter += 1
                     src_tkns = []
+                    str = ''
 
                 else:
                     str += ' '
