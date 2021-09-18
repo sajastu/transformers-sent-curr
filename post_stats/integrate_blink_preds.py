@@ -13,15 +13,16 @@ with open('blink_test_segmented/test.json') as fR:
         paragraphs.append(json.loads(l.strip())['document'])
 
 cases = {}
-cases_par = []
+cases_par = {}
 for seg_id, par, seg_pred in zip(segmented_ids, paragraphs, segmented_preds):
-    cases_par.append({'segment_id': seg_id, 'paragraph_text': par, 'paragraph_summary': seg_pred})
     case_id = seg_id.split('-')[0]
     if case_id not in cases.keys():
         cases[case_id] = seg_pred
+        cases_par[case_id] = [{'segment_id': seg_id, 'paragraph_text': par, 'paragraph_summary': seg_pred}]
     else:
         cases[case_id] += ' '
         cases[case_id] += seg_pred
+        cases_par[case_id].append({'segment_id': seg_id, 'paragraph_text': par, 'paragraph_summary': seg_pred})
 
 
 with open('blink_test_segmented/final_preds.json', mode='w') as fW:
@@ -34,7 +35,8 @@ with open('blink_test_segmented/final_preds.json', mode='w') as fW:
         )
         fW.write('\n')
 
-with open('blink_test_segmented/paragraph_summaries_350.json', mode='w') as fW:
-    for ent in cases_par:
-        json.dump(ent, fW)
-        fW.write('\n')
+for k, pars in cases_par.items():
+    with open(f'blink_test_segmented/summary_{k}.json', mode='w') as fW:
+        for ent in pars:
+            json.dump(ent, fW)
+            fW.write('\n')
