@@ -43,7 +43,7 @@ for f in glob.glob("blink/*.txt"):
                 # if token_count > 350 or l.strip() == fR.readlines()[-1].strip():
                 if not size:
                     print('yohoo last line')
-                if token_count > 512 or not size:
+                if token_count > 200 or not size:
                     src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
                     # should store
