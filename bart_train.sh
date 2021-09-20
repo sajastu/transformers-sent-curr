@@ -18,9 +18,9 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --evaluation_strategy steps  --eval_steps 25000 --save_steps 25000 --warmup_steps 32000 --logging_steps 200 \
     --text_column document \
     --summary_column summary \
-    --train_file $DS_BASE_DIR/trainPret.json \
-    --validation_file $DS_BASE_DIR/validation.json \
-    --test_file $DS_BASE_DIR/validation.json
+    --train_file $DS_BASE_DIR/train.json \
+    --validation_file $DS_BASE_DIR/val.json \
+    --test_file $DS_BASE_DIR/test.json
 #    --predict_with_generate
 
 #CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py  \
