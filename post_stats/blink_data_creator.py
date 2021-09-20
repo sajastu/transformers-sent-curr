@@ -79,8 +79,10 @@ for f in glob.glob("blink/*.txt"):
     # src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
 
-# os.makedirs('../blink_test_segmented/')
-with open('../blink_test_segmented/test.json', mode='w') as fW:
+if not os.path.exists('../blink_test_segmented/'):
+    os.makedirs('../blink_test_segmented/')
+
+with open('../blink_test_segmented/test_150.json', mode='w') as fW:
     for e in cases:
         json.dump(e, fW)
         fW.write('\n')
