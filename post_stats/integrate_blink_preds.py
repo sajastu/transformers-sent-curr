@@ -100,7 +100,10 @@ for seg_id, par in zip(all_segmented_ids, all_paragraphs):
             cases_all[case_id] = [{'segment_id': seg_id, 'paragraph_text': par,
                                        'paragraph_summary': cases_par[case_id][cases_par[case_id].index(seg_id)]}]
         else:
-            cases_all[case_id].append({'segment_id': seg_id, 'paragraph_text': par, 'paragraph_summary': cases_par[case_id][cases_par[case_id].index(seg_id)]})
+            try:
+                cases_all[case_id].append({'segment_id': seg_id, 'paragraph_text': par, 'paragraph_summary': cases_par[case_id][cases_par[case_id].index(seg_id)]})
+            except:
+                import pdb;pdb.set_trace()
     else:
         if case_id not in cases_all.keys():
             cases_all[case_id] = [{'segment_id': seg_id, 'paragraph_text': par,
