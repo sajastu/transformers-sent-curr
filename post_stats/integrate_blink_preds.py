@@ -6,9 +6,11 @@ with open('/trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9
     for l in fR:
         segmented_preds.append(l.strip())
 
+
+METHOD = '150'
 segmented_ids = []
 paragraphs = []
-with open('blink_test_segmented/test.json') as fR:
+with open(f'blink_test_segmented/test_{METHOD}.json') as fR:
     for l in fR:
         segmented_ids.append(json.loads(l.strip())['id'])
         paragraphs.append(json.loads(l.strip())['document'])
@@ -26,7 +28,7 @@ for seg_id, par, seg_pred in zip(segmented_ids, paragraphs, segmented_preds):
         cases_par[case_id].append({'segment_id': seg_id, 'paragraph_text': par, 'paragraph_summary': seg_pred})
 
 
-with open('blink_test_segmented/final_preds.json', mode='w') as fW:
+with open(f'blink_test_segmented/final_preds_{METHOD}.json', mode='w') as fW:
     for k, v in cases.items():
         json.dump(
             {'file': k,
@@ -35,11 +37,11 @@ with open('blink_test_segmented/final_preds.json', mode='w') as fW:
             fW
         )
         fW.write('\n')
-subprocess.call(['gupload', 'blink_test_segmented/final_preds.json'])
+subprocess.call(['gupload', f'blink_test_segmented/final_preds_{METHOD}.json'])
 
 for k, pars in cases_par.items():
-    with open(f'blink_test_segmented/blink_summary_{k.replace("blink/", "")}.json', mode='w') as fW:
+    with open(f'blink_test_segmented/blink_summary_{k.replace("blink/", "")}_{METHOD}.json', mode='w') as fW:
         for ent in pars:
             json.dump(ent, fW)
             fW.write('\n')
-    subprocess.call(['gupload', f'blink_test_segmented/blink_summary_{k.replace("blink/", "")}.json'])
+    subprocess.call(['gupload', f'blink_test_segmented/blink_summary_{k.replace("blink/", "")}_{METHOD}.json'])
