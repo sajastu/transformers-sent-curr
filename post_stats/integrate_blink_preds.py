@@ -7,7 +7,7 @@ with open('/trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9
         segmented_preds.append(l.strip())
 
 
-METHOD = '512'
+METHOD = '300'
 segmented_ids = []
 paragraphs = []
 with open(f'blink_test_segmented/test_{METHOD}.json') as fR:

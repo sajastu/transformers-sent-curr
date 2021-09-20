@@ -43,7 +43,7 @@ for f in glob.glob("blink/*.txt"):
                 # if token_count > 350 or l.strip() == fR.readlines()[-1].strip():
                 if not size:
                     print('yohoo last line')
-                if token_count > 512 or not size:
+                if token_count > 300 or not size:
                     src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
 
                     # should store
@@ -82,7 +82,7 @@ for f in glob.glob("blink/*.txt"):
 if not os.path.exists('../blink_test_segmented/'):
     os.makedirs('../blink_test_segmented/')
 
-with open('../blink_test_segmented/test_512.json', mode='w') as fW:
+with open('../blink_test_segmented/test_300.json', mode='w') as fW:
     for e in cases:
         json.dump(e, fW)
         fW.write('\n')
