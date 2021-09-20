@@ -135,9 +135,6 @@ for f in glob.glob("blink/*.txt"):
                 token_count = sum(sum(1 for t in s) for s in src_sentences_tkns)
 
                 if token_count > 50:
-
-
-                # if token_count > 350 or l.strip() == fR.readlines()[-1].strip():
                     src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
                     # should store
                     for j, sentence in enumerate(src_sentences_tkns):
@@ -154,7 +151,6 @@ for f in glob.glob("blink/*.txt"):
                             'rg_labels': [0 for s in range(len(src_tkns))]
                         }
                     bart_cases.append(ent)
-                    src_tkns = []
 
                 ent = {
                     'id': f + f'-{iter}',
@@ -164,6 +160,7 @@ for f in glob.glob("blink/*.txt"):
                     'rg_labels': [0 for s in range(len(src_tkns))]
                 }
                 cases.append(ent)
+                src_tkns = []
                 iter += 1
 
     # summary_sents = sentencizer(str)
