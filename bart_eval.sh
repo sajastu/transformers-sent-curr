@@ -10,8 +10,8 @@ export SAVE_MODEL_DIR=/home/code-base/user_space
 python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
     --model_name_or_path /trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9b2de/saved_models/bart-ext/bart-curr \
     --do_predict \
-    --train_file $DS_BASE_DIR_P/test.json \
-    --validation_file $DS_BASE_DIR_P/test.json \
+    --train_file $DS_BASE_DIR_P/test_150.json \
+    --validation_file $DS_BASE_DIR_P/test_150.json \
     --test_file $DS_BASE_DIR_P/test_150.json \
     --output_dir /trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9b2de/saved_models/bart-ext/bart-curr \
     --per_device_train_batch_size=2 \
