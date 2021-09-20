@@ -134,7 +134,7 @@ for f in glob.glob("blink/*.txt"):
                 src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
                 token_count = sum(sum(1 for t in s) for s in src_sentences_tkns)
 
-                if token_count > 50:
+                if token_count > 30:
                     src_sentences_tkns = tokenizer.tokenize_text(summary_sents)
                     # should store
                     for j, sentence in enumerate(src_sentences_tkns):
@@ -172,12 +172,12 @@ for f in glob.glob("blink/*.txt"):
 if not os.path.exists('../blink_test_segmented/'):
     os.makedirs('../blink_test_segmented/')
 
-with open('../blink_test_segmented/test_50_m1_bart.json', mode='w') as fW:
+with open('../blink_test_segmented/test_30_m1_bart.json', mode='w') as fW:
     for e in bart_cases:
         json.dump(e, fW)
         fW.write('\n')
 
-with open('../blink_test_segmented/test_50_m1_all.json', mode='w') as fW:
+with open('../blink_test_segmented/test_30_m1_all.json', mode='w') as fW:
     for e in cases:
         json.dump(e, fW)
         fW.write('\n')
