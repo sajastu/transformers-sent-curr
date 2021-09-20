@@ -589,6 +589,7 @@ def main():
 
     # Evaluation
     results = {}
+    training_args.do_eval = False
     if training_args.do_eval:
         logger.info("*** Evaluate ***")
         metrics = trainer.evaluate(
