@@ -2,7 +2,7 @@
 
 
 python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py \
-    --task_mode extractive \
+    --task_mode abstractive \
     --model_name_or_path facebook/bart-large \
     --do_train \
     --do_eval \

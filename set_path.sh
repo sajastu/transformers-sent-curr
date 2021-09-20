@@ -10,10 +10,10 @@ done
 
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export MODEL=bart-ext
-export M_ID=bart-sentence
-export M_ID=bart-tldrQ-pretrained-superloss
+#export M_ID=bart-sentence
+export M_ID=bart-tldr4M-pretrained-superloss
 
-export DS_BASE_DIR=$SAVE_MODEL_DIR/tldrQ/
+export DS_BASE_DIR=$SAVE_MODEL_DIR/webis-tldr/splits
 #export DS_BASE_DIR=/tmp/transformers/reddit_tifu
 
 export MODEL_OUTPUT_DIR=$SAVE_MODEL_DIR/saved_models/$MODEL/$M_ID

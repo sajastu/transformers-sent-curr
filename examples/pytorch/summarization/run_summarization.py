@@ -440,7 +440,11 @@ def main():
         inputs = examples[text_column]
         # inputs = [i.replace('</s><s> ', '') for i in inputs]
         targets = examples[summary_column]
-        ext_labels = examples['rg_labels']
+        if 'rg_labels' in examples.keys():
+            ext_labels = examples['rg_labels']
+        else:
+            # mock
+            ext_labels = [[0] for _ in inputs]
         inputs = [prefix + inp for inp in inputs]
 
         model_inputs = tokenizer(inputs, max_length=data_args.max_source_length, padding=padding, truncation=True, ext_labels=ext_labels)
