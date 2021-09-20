@@ -1,5 +1,5 @@
 
-export DS_BASE_DIR_P=/home/code-base/transfomrers/blink_test_segmented/
+export DS_BASE_DIR_P=/home/code-base/transformers/blink_test_segmented/
 
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export MODEL=bart-ext
