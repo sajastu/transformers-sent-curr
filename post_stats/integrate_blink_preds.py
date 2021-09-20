@@ -101,7 +101,13 @@ for seg_id, par in zip(all_segmented_ids, all_paragraphs):
                                        'paragraph_summary': cases_par[case_id][cases_par[case_id].index(seg_id)]}]
         else:
             try:
-                cases_all[case_id].append({'segment_id': seg_id, 'paragraph_text': par, 'paragraph_summary': cases_par[case_id][cases_par[case_id].index(seg_id)]})
+                j = 0
+                for j, ent in enumerate(cases_par[case_id]):
+                    if ent['segment_id'] == seg_id:
+                        break
+
+                cases_all[case_id].append({'segment_id': seg_id, 'paragraph_text': par, 'paragraph_summary': cases_par[case_id][j]})
+
             except:
                 import pdb;pdb.set_trace()
     else:
