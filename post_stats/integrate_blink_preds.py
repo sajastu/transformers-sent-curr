@@ -97,8 +97,12 @@ for seg_id, par in zip(all_segmented_ids, all_paragraphs):
     case_id = seg_id.split('-')[0]
     if seg_id in [s['segment_id'] for s in cases_par[case_id]]:
         if case_id not in cases_all.keys():
+            j = 0
+            for j, ent in enumerate(cases_par[case_id]):
+                if ent['segment_id'] == seg_id:
+                    break
             cases_all[case_id] = [{'segment_id': seg_id, 'paragraph_text': par,
-                                       'paragraph_summary': cases_par[case_id][cases_par[case_id].index(seg_id)]}]
+                                       'paragraph_summary': cases_par[case_id][j]}]
         else:
             try:
                 j = 0
