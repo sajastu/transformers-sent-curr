@@ -20,8 +20,9 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --summary_column summary \
     --train_file $DS_BASE_DIR/train.json \
     --validation_file $DS_BASE_DIR/val.json \
-    --test_file $DS_BASE_DIR/test.json
-#    --predict_with_generate
+    --test_file $DS_BASE_DIR/test.json \
+    --predict_with_generate \
+    --resume_from_checkpoint trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9b2de//saved_models/bart-ext/bart-tldr4M-pretrained-superloss/checkpoint-25000/
 
 #CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py  \
 
