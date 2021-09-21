@@ -1606,11 +1606,11 @@ class BartForConditionalGeneration(BartPretrainedModel):
         if labels is not None:
             # loss_fct = CrossEntropyLoss()
             # masked_lm_loss = loss_fct(lm_logits.view(-1, self.config.vocab_size), labels.view(-1))
-            # if not is_inference:
-            #     masked_lm_loss = self.super_loss(lm_logits.view(-1, self.config.vocab_size), labels.view(-1))
-            # else:
-            loss_fct = CrossEntropyLoss()
-            masked_lm_loss = loss_fct(lm_logits.view(-1, self.config.vocab_size), labels.view(-1))
+            if not is_inference:
+                masked_lm_loss = self.super_loss(lm_logits.view(-1, self.config.vocab_size), labels.view(-1))
+            else:
+                loss_fct = CrossEntropyLoss()
+                masked_lm_loss = loss_fct(lm_logits.view(-1, self.config.vocab_size), labels.view(-1))
             # self.super_loss.set_update_tau()
 
 
