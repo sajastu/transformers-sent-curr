@@ -14,7 +14,7 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --learning_rate 3e-5 \
     --weight_decay 0.01 \
     --adam_beta2 0.98 \
-    --num_train_epochs 5 \
+    --num_train_epochs 10 \
     --overwrite_output_dir \
     --evaluation_strategy steps  --eval_steps 5000 --save_steps 5000 --warmup_steps 10000 --logging_steps 100 \
     --predict_with_generate \
