@@ -16,13 +16,13 @@ python examples/pytorch/summarization/run_summarization.py \
     --adam_beta2 0.98 \
     --num_train_epochs 5 \
     --overwrite_output_dir \
-    --evaluation_strategy steps  --eval_steps 25000 --save_steps 25000 --warmup_steps 32000 --logging_steps 200 \
-    --text_column document \
-    --summary_column summary \
+    --evaluation_strategy steps  --eval_steps 5000 --save_steps 5000 --warmup_steps 10000 --logging_steps 100 \
     --predict_with_generate \
     --dataset_name cnn_dailymail \
     --dataset_config "3.0.0" \
-    --source_prefix "summarize: "
+    --source_prefix "summarize: " \
+#    --text_column document \
+#    --summary_column summary \
 #    --train_file $DS_BASE_DIR/train.json \
 #    --validation_file $DS_BASE_DIR/val.json \
 #    --test_file $DS_BASE_DIR/test.json \
