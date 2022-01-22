@@ -20,7 +20,8 @@ python examples/pytorch/summarization/run_summarization.py \
     --text_column document \
     --summary_column summary \
     --predict_with_generate \
-    --dataset_name cnn_dailymail
+    --dataset_name cnn_dailymail \
+    --dataset_config "3.0.0"
 #    --train_file $DS_BASE_DIR/train.json \
 #    --validation_file $DS_BASE_DIR/val.json \
 #    --test_file $DS_BASE_DIR/test.json \
