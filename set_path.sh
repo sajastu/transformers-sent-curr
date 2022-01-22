@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 #user_space_tr=$(python disk.py)
 #

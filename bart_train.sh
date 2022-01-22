@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 
-python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py \
+#python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py \
+python examples/pytorch/summarization/run_summarization.py \
     --task_mode abstractive \
     --model_name_or_path facebook/bart-large \
     --do_train \
@@ -18,10 +19,11 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --evaluation_strategy steps  --eval_steps 25000 --save_steps 25000 --warmup_steps 32000 --logging_steps 200 \
     --text_column document \
     --summary_column summary \
-    --train_file $DS_BASE_DIR/train.json \
-    --validation_file $DS_BASE_DIR/val.json \
-    --test_file $DS_BASE_DIR/test.json \
-    --predict_with_generate
+    --predict_with_generate \
+    --dataset_name cnn_dailymail
+#    --train_file $DS_BASE_DIR/train.json \
+#    --validation_file $DS_BASE_DIR/val.json \
+#    --test_file $DS_BASE_DIR/test.json \
 #    --resume_from_checkpoint /trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9b2de//saved_models/bart-ext/bart-tldr4M-pretrained-superloss/checkpoint-25000/
 
 #CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py  \
