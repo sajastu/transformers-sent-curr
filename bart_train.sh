@@ -21,7 +21,8 @@ python examples/pytorch/summarization/run_summarization.py \
     --summary_column summary \
     --predict_with_generate \
     --dataset_name cnn_dailymail \
-    --dataset_config "3.0.0"
+    --dataset_config "3.0.0" \
+    --source_prefix "summarize: "
 #    --train_file $DS_BASE_DIR/train.json \
 #    --validation_file $DS_BASE_DIR/val.json \
 #    --test_file $DS_BASE_DIR/test.json \
