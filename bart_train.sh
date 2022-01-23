@@ -22,7 +22,7 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --dataset_config "3.0.0" \
     --lr_scheduler polynomial \
     --max_grad_norm 0.1 \
-    --eval_steps 4000
+    --eval_steps 4000 --save_steps 4000
 
 #    --text_column document \
 #    --summary_column summary \
