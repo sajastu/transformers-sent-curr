@@ -865,8 +865,8 @@ class BartEncoder(BartPretrainedModel):
         self.layernorm_embedding = nn.LayerNorm(embed_dim)
 
         self.init_weights()
-        self.config.gradient_checkpointing = True
-        self.config.use_cache = False
+        # self.config.gradient_checkpointing = True
+        # self.config.use_cache = False
 
     def forward(
             self,
