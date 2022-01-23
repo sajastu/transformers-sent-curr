@@ -21,10 +21,9 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --dataset_name cnn_dailymail \
     --dataset_config "3.0.0" \
     --lr_scheduler polynomial \
-    --source_prefix "summarize: " \
-    --lr_scheduler polynomial \
     --max_grad_norm 0.1 \
-    --val_check_interval 0.1
+    --eval_steps 4000
+
 #    --text_column document \
 #    --summary_column summary \
 #    --train_file $DS_BASE_DIR/train.json \
