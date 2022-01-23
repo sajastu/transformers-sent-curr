@@ -122,7 +122,7 @@ class BartConfig(PretrainedConfig):
         activation_function="gelu",
         d_model=1024,
         dropout=0.1,
-        attention_dropout=0.0,
+        attention_dropout=0.1,
         activation_dropout=0.0,
         init_std=0.02,
         classifier_dropout=0.0,

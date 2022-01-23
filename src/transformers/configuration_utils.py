@@ -220,10 +220,12 @@ class PretrainedConfig(PushToHubMixin):
         self.tie_encoder_decoder = kwargs.pop("tie_encoder_decoder", False)
 
         # Parameters for sequence generation
-        self.max_length = kwargs.pop("max_length", 20)
-        self.min_length = kwargs.pop("min_length", 0)
+        self.max_length = kwargs.pop("max_length", 142)
+        self.min_length = kwargs.pop("min_length", 56)
         self.do_sample = kwargs.pop("do_sample", False)
+
         self.early_stopping = kwargs.pop("early_stopping", False)
+
         self.num_beams = kwargs.pop("num_beams", 1)
         self.num_beam_groups = kwargs.pop("num_beam_groups", 1)
         self.diversity_penalty = kwargs.pop("diversity_penalty", 0.0)
@@ -231,8 +233,8 @@ class PretrainedConfig(PushToHubMixin):
         self.top_k = kwargs.pop("top_k", 50)
         self.top_p = kwargs.pop("top_p", 1.0)
         self.repetition_penalty = kwargs.pop("repetition_penalty", 1.0)
-        self.length_penalty = kwargs.pop("length_penalty", 1.0)
-        self.no_repeat_ngram_size = kwargs.pop("no_repeat_ngram_size", 0)
+        self.length_penalty = kwargs.pop("length_penalty", 2.0)
+        self.no_repeat_ngram_size = kwargs.pop("no_repeat_ngram_size", 3)
         self.encoder_no_repeat_ngram_size = kwargs.pop("encoder_no_repeat_ngram_size", 0)
         self.bad_words_ids = kwargs.pop("bad_words_ids", None)
         self.num_return_sequences = kwargs.pop("num_return_sequences", 1)
