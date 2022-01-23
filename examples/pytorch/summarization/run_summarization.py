@@ -161,14 +161,14 @@ class DataTrainingArguments:
         },
     )
     max_target_length: Optional[int] = field(
-        default=256,
+        default=142,
         metadata={
             "help": "The maximum total sequence length for target text after tokenization. Sequences longer "
                     "than this will be truncated, sequences shorter will be padded."
         },
     )
     val_max_target_length: Optional[int] = field(
-        default=256,
+        default=142,
         metadata={
             "help": "The maximum total sequence length for validation target text after tokenization. Sequences longer "
                     "than this will be truncated, sequences shorter will be padded. Will default to `max_target_length`."
@@ -206,7 +206,7 @@ class DataTrainingArguments:
         },
     )
     num_beams: Optional[int] = field(
-        default=None,
+        default=4,
         metadata={
             "help": "Number of beams to use for evaluation. This argument will be passed to ``model.generate``, "
                     "which is used during ``evaluate`` and ``predict``."
@@ -250,6 +250,12 @@ summarization_name_mapping = {
     "wiki_summary": ("article", "highlights"),
 }
 
+
+def use_task_specific_params(model, task):
+    # update config with summarization specific params
+    task_specific_params = model.config.task_specific_params
+    if task_specific_params is not None:
+        model.config.update(task_specific_params.get(task, {}))
 
 def main():
     # See all possible arguments in src/transformers/training_args.py
@@ -438,6 +444,8 @@ def main():
             "label_smoothing is enabled but the `prepare_decoder_input_ids_from_labels` method is not defined for"
             f"`{model.__class__.__name__}`. This will lead to loss being calculated twice and will take up more memory"
         )
+
+    use_task_specific_params(model, 'summarization')
 
     def preprocess_function(examples):
 

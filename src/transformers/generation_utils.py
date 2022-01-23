@@ -582,6 +582,9 @@ class GenerationMixin:
         no_repeat_ngram_size = (
             no_repeat_ngram_size if no_repeat_ngram_size is not None else self.config.no_repeat_ngram_size
         )
+
+        no_repeat_ngram_size = 3
+
         encoder_no_repeat_ngram_size = (
             encoder_no_repeat_ngram_size
             if encoder_no_repeat_ngram_size is not None

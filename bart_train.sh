@@ -13,14 +13,20 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --per_device_eval_batch_size=8  \
     --learning_rate 3e-5 \
     --weight_decay 0.01 \
-    --adam_beta2 0.98 \
+    --adam_beta2 0.999 \
     --num_train_epochs 10 \
     --overwrite_output_dir \
-    --evaluation_strategy steps  --eval_steps 5000 --save_steps 5000 --warmup_steps 10000 --logging_steps 100 \
+    --eval_max_gen_length=142 --max_source_length=1042 --max_target_length=56 \
+    --evaluation_strategy steps --warmup_steps 500 --logging_steps 100 \
     --predict_with_generate \
     --dataset_name cnn_dailymail \
     --dataset_config "3.0.0" \
+    --lr_scheduler polynomial \
     --source_prefix "summarize: " \
+    --weight_decay 0.01 \
+    --lr_scheduler polynomial \
+    --dropout 0.1 --attention_dropout 0.1 --gradient_clip_val=0.1 --early_stop_callback=1 \
+    --val_check_interval 0.1
 #    --text_column document \
 #    --summary_column summary \
 #    --train_file $DS_BASE_DIR/train.json \
