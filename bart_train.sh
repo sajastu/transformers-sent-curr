@@ -23,6 +23,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.p
     --train_file $DS_BASE_DIR/train.json \
     --validation_file $DS_BASE_DIR/validation.json \
     --test_file $DS_BASE_DIR/test.json \
+    --label_smoothing_factor 0 \
 #    --lr_scheduler polynomial \
 
 #    --dataset_name cnn_dailymail \
