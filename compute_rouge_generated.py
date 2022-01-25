@@ -1,7 +1,7 @@
 from datasets import load_dataset
 from datasets import load_metric
 from rouge_score import rouge_scorer, scoring
-from utils import calculate_bleu, calculate_rouge, chunks, parse_numeric_n_bool_cl_kwargs, use_task_specific_params
+from utils import calculate_rouge, parse_numeric_n_bool_cl_kwargs, use_task_specific_params
 
 metric = load_metric("rouge")
 
