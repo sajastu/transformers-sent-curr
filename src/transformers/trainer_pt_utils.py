@@ -431,7 +431,7 @@ class SuperLoss(nn.Module):
         super(SuperLoss, self).__init__()
         self.tau = tau
         self.lam = lam
-        self.loss_fct = CrossEntropyLoss( reduction='none')
+        # self.loss_fct = CrossEntropyLoss( reduction='none')
         self.batch_size = batch_size
         self.processed_docs = 0
         self.accumulative_loss = 0
@@ -439,11 +439,11 @@ class SuperLoss(nn.Module):
     def set_update_tau(self):
         self.tau = self.accumulative_loss / self.processed_docs
 
-    def forward(self, logits, targets):
+    def forward(self, loss):
 
         l_i = self.loss_fct(logits, targets,).detach()
         sigma = self.sigma(l_i)
-        loss = (self.loss_fct(logits, targets) - self.tau) * sigma + self.lam * (torch.log(sigma) ** 2)
+        loss = (loss - self.tau) * sigma + self.lam * (torch.log(sigma) ** 2)
         loss = loss.sum() / self.batch_size
 
         # update tau
@@ -480,6 +480,8 @@ class LabelSmoother:
 
     def __call__(self, model_output, labels):
         logits = model_output["logits"] if isinstance(model_output, dict) else model_output[0]
+
+
         log_probs = -nn.functional.log_softmax(logits, dim=-1)
         if labels.dim() == log_probs.dim() - 1:
             labels = labels.unsqueeze(-1)
