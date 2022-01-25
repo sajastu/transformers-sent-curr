@@ -429,6 +429,8 @@ class SuperLoss(nn.Module):
 
     def __init__(self, tau=1.5, lam=0.9, batch_size=1):
         super(SuperLoss, self).__init__()
+        from scipy.special import lambertw
+
         self.tau = tau
         self.lam = lam
         # self.loss_fct = CrossEntropyLoss( reduction='none')
@@ -476,6 +478,7 @@ class LabelSmoother:
     """
     epsilon: float = 0.1
     ignore_index: int = -100
+    super_loss = SuperLoss()
 
     def __call__(self, model_output, labels):
         logits = model_output["logits"] if isinstance(model_output, dict) else model_output[0]
