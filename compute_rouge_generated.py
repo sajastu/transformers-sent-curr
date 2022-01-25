@@ -21,7 +21,7 @@ for x in open(save_path).readlines():
     output_sents = nlp(x.rstrip())
     output_sents_text = []
 
-    for sent in output_sents:
+    for sent in output_sents.sents:
         import pdb;pdb.set_trace()
         output_sents_text.append(sent.text)
 
