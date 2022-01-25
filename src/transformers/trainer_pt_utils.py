@@ -474,7 +474,7 @@ class LabelSmoother:
         ignore_index (:obj:`int`, `optional`, defaults to -100):
             The index in the labels to ignore when computing the loss.
     """
-
+    super_loss = SuperLoss()
     epsilon: float = 0.1
     ignore_index: int = -100
 
