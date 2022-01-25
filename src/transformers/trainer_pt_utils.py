@@ -442,7 +442,7 @@ class SuperLoss(nn.Module):
     def forward(self, loss):
 
         # l_i = self.loss_fct(logits, targets,).detach()
-        sigma = self.sigma(l_i)
+        sigma = self.sigma(loss)
         loss = (loss - self.tau) * sigma + self.lam * (torch.log(sigma) ** 2)
         loss = loss.sum() / self.batch_size
 
