@@ -13,7 +13,7 @@ SAVE_MODEL_DIR=/trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export MODEL=bart
 #export M_ID=bart-sentence
-export M_ID=bart-cnn-test
+export M_ID=bartCurr-cnn
 
 export DS_BASE_DIR=$SAVE_MODEL_DIR/webis-tldr/splits
 export DS_BASE_DIR=reddit_tifu
