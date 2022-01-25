@@ -40,9 +40,9 @@ def calculate_rouge(
     aggregator = scoring.BootstrapAggregator()
     for pred, tgt in zip(tgt_lns, pred_lns):
         # rougeLsum expects "\n" separated sentences within a summary
-        if newline_sep:
-            pred = add_newline_to_end_of_each_sentence(pred)
-            tgt = add_newline_to_end_of_each_sentence(tgt)
+        # if newline_sep:
+        #     pred = add_newline_to_end_of_each_sentence(pred)
+        #     tgt = add_newline_to_end_of_each_sentence(tgt)
         scores = scorer.score(pred, tgt)
         aggregator.add_scores(scores)
 
