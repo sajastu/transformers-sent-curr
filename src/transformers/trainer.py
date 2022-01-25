@@ -1907,13 +1907,15 @@ class Trainer:
 
         Subclass and override for custom behavior.
         """
+        import pdb;
+        pdb.set_trace()
+
         if self.label_smoother is not None and "labels" in inputs:
             labels = inputs.pop("labels")
         else:
             labels = None
         outputs = model(**inputs)
-        import pdb;
-        pdb.set_trace()
+
 
         # Save past state if it exists
         # TODO: this needs to be fixed and made cleaner later.
