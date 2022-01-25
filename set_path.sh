@@ -16,7 +16,7 @@ export MODEL=bart
 export M_ID=bart-cnn
 
 export DS_BASE_DIR=$SAVE_MODEL_DIR/webis-tldr/splits
-#export DS_BASE_DIR=/tmp/transformers/reddit_tifu
+export DS_BASE_DIR=/tmp/transformers/reddit_tifu
 
 export MODEL_OUTPUT_DIR=$SAVE_MODEL_DIR/saved_models/$MODEL/$M_ID
 

@@ -18,12 +18,15 @@ CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.p
     --overwrite_output_dir \
     --evaluation_strategy steps --warmup_steps 500 --logging_steps 100 \
     --predict_with_generate \
-    --dataset_name cnn_dailymail \
-    --dataset_config "3.0.0" \
     --lr_scheduler polynomial \
     --max_grad_norm 0.1 \
-    --eval_steps 4000 --save_steps 4000
+    --eval_steps 4000 --save_steps 4000 \
+    --train_file $DS_BASE_DIR/train.json \
+    --validation_file $DS_BASE_DIR/val.json \
+    --test_file $DS_BASE_DIR/test.json \
 
+#    --dataset_name cnn_dailymail \
+#    --dataset_config "3.0.0" \
 #    --text_column document \
 #    --summary_column summary \
 #    --train_file $DS_BASE_DIR/train.json \

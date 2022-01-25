@@ -470,6 +470,7 @@ def main():
             labels["input_ids"] = [
                 [(l if l != tokenizer.pad_token_id else -100) for l in label] for label in labels["input_ids"]
             ]
+
         model_inputs["labels"] = labels["input_ids"]
 
         model_inputs["id"] = examples['id']
