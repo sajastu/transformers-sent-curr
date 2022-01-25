@@ -444,7 +444,7 @@ class SuperLoss(nn.Module):
         # l_i = self.loss_fct(logits, targets,).detach()
         sigma = self.sigma(loss)
         loss = (loss - self.tau) * sigma + self.lam * (torch.log(sigma) ** 2)
-        loss = loss.sum() / self.batch_size
+        # loss = loss.sum() / self.batch_size
 
         # update tau
         # self.accumulative_loss += loss
@@ -493,9 +493,11 @@ class LabelSmoother:
         nll_loss = log_probs.gather(dim=-1, index=labels)
         nll_loss.masked_fill_(padding_mask, 0.0)
         import pdb;pdb.set_trace()
+        nll_loss = self.super_loss(nll_loss)
 
         num_active_elements = padding_mask.numel() - padding_mask.long().sum()
-        nll_loss = nll_loss.sum() / num_active_elements
+        # nll_loss = nll_loss.sum() / num_active_elements
+        nll_loss = nll_loss / num_active_elements
 
 
         # works for fp16 input tensor too, by internally upcasting it to fp32
