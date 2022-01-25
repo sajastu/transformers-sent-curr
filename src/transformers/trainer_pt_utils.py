@@ -36,7 +36,7 @@ from torch.utils.data.sampler import RandomSampler, Sampler
 from .file_utils import is_sagemaker_dp_enabled, is_sagemaker_mp_enabled, is_torch_tpu_available
 from .tokenization_utils_base import BatchEncoding
 from .utils import logging
-
+from scipy.special import lambertw
 
 if is_sagemaker_dp_enabled():
     import smdistributed.dataparallel.torch.distributed as dist
@@ -429,8 +429,6 @@ class SuperLoss(nn.Module):
 
     def __init__(self, tau=1.5, lam=0.9, batch_size=1):
         super(SuperLoss, self).__init__()
-        from scipy.special import lambertw
-
         self.tau = tau
         self.lam = lam
         # self.loss_fct = CrossEntropyLoss( reduction='none')
