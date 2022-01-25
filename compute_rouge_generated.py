@@ -10,8 +10,8 @@ nlp = English()
 nlp.add_pipe("sentencizer")
 
 def calculate_rouge(
-    pred_lns: List[str],
-    tgt_lns: List[str],
+    pred_lns,
+    tgt_lns,
     use_stemmer=True,
     rouge_keys=ROUGE_KEYS,
     return_precision_and_recall=False,
