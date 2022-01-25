@@ -76,6 +76,7 @@ for x in open(save_path).readlines():
     output_sents_text = []
     for sent in output_sents.sents:
         output_sents_text.append(sent.text)
+    output_lns.append(output_sents_text)
 
 reference_lns = []
 for x in references:
@@ -83,10 +84,11 @@ for x in references:
     reference_sents_text = []
     for sent in output_sents.sents:
         reference_sents_text.append(sent.text)
+    reference_lns.append(reference_sents_text)
 
 
 
-output_lns = [" . \n".join(x).lower() for x in output_sents_text]
-reference_lns = [" . \n".join(x).lower() for x in reference_sents_text][: len(output_lns)]
-import pdb;pdb.set_trace()
+output_lns = [" . \n".join(x).lower() for x in output_lns]
+reference_lns = [" . \n".join(x).lower() for x in reference_lns][: len(output_lns)]
+# import pdb;pdb.set_trace()
 print(calculate_rouge(output_lns, reference_lns))
