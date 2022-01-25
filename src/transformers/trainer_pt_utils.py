@@ -492,11 +492,12 @@ class LabelSmoother:
         labels.clamp_min_(0)
         nll_loss = log_probs.gather(dim=-1, index=labels)
         nll_loss.masked_fill_(padding_mask, 0.0)
+        import pdb;pdb.set_trace()
+
         num_active_elements = padding_mask.numel() - padding_mask.long().sum()
         nll_loss = nll_loss.sum() / num_active_elements
 
 
-        import pdb;pdb.set_trace()
         # works for fp16 input tensor too, by internally upcasting it to fp32
         smoothed_loss = log_probs.sum(dim=-1, keepdim=True, dtype=torch.float32)
         smoothed_loss.masked_fill_(padding_mask, 0.0)
