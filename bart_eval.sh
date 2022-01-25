@@ -8,17 +8,14 @@ export SAVE_MODEL_DIR=/home/code-base/user_space
 #  --model_name_or_path $SAVE_MODEL_DIR/saved_models/$MODEL/$M_ID/checkpoint-20000/\
 
 python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
-    --model_name_or_path /trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9b2de/saved_models/bart-ext/bart-curr \
+    --model_name_or_path /saved_models/bart/bart-cnn/checkpoint-168000/ \
     --do_predict \
-    --train_file $DS_BASE_DIR_P/test_150.json \
-    --validation_file $DS_BASE_DIR_P/test_150.json \
-    --test_file $DS_BASE_DIR_P/test_30_m1_bart.json \
-    --output_dir /trainman-mount/trainman-k8s-storage-349d2c46-5192-4e7b-8567-ada9d1d9b2de/saved_models/bart-ext/bart-curr \
+    --output_dir /saved_models/bart/bart-cnn/ \
     --per_device_train_batch_size=2 \
     --per_device_eval_batch_size=8  \
     --overwrite_output_dir \
     --predict_with_generate \
-    --text_column document \
-    --summary_column summary
+    --dataset_name cnn_dailymail \
+    --dataset_config "3.0.0"
 
-python post_stats/integrate_blink_preds.py
+#python post_stats/integrate_blink_preds.py
