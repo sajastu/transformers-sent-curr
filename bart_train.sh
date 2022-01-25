@@ -20,11 +20,10 @@ CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.p
     --predict_with_generate \
     --max_grad_norm 0.1 \
     --eval_steps 4000 --save_steps 4000 \
-    --train_file $DS_BASE_DIR/train.json \
-    --validation_file $DS_BASE_DIR/validation.json \
-    --test_file $DS_BASE_DIR/test.json \
+    --dataset_name ccdv/cnn_dailymail \
+    --dataset_config "3.0.0" \
     --label_smoothing_factor 0.1 \
-#    --lr_scheduler polynomial \
+    --lr_scheduler polynomial \
 
 #    --dataset_name cnn_dailymail \
 #    --dataset_config "3.0.0" \
