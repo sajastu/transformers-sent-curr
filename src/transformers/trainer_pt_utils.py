@@ -425,6 +425,43 @@ class DistributedTensorGatherer:
             logger.warning("Not all data has been set. Are you sure you passed all values?")
         return nested_truncate(self._storage, self.num_samples)
 
+class SuperLoss(nn.Module):
+
+    def __init__(self, tau=1.5, lam=0.9, batch_size=1):
+        super(SuperLoss, self).__init__()
+        self.tau = tau
+        self.lam = lam
+        self.loss_fct = CrossEntropyLoss( reduction='none')
+        self.batch_size = batch_size
+        self.processed_docs = 0
+        self.accumulative_loss = 0
+
+    def set_update_tau(self):
+        self.tau = self.accumulative_loss / self.processed_docs
+
+    def forward(self, logits, targets):
+
+        l_i = self.loss_fct(logits, targets,).detach()
+        sigma = self.sigma(l_i)
+        loss = (self.loss_fct(logits, targets) - self.tau) * sigma + self.lam * (torch.log(sigma) ** 2)
+        loss = loss.sum() / self.batch_size
+
+        # update tau
+        # self.accumulative_loss += loss
+        # self.processed_docs += 1
+        # self.set_update_tau()
+
+        return loss
+
+    def sigma(self, l_i):
+        x = torch.ones(l_i.size()) * (-2 / math.exp(1.))
+        x = x.cuda()
+        y = 0.5 * torch.max(x, (l_i - self.tau) / self.lam)
+        y = y.cpu().detach().numpy()
+        sigma = np.exp(-lambertw(y))
+        sigma = sigma.real.astype(np.float32)
+        sigma = torch.from_numpy(sigma).cuda()
+        return sigma
 
 @dataclass
 class LabelSmoother:
@@ -452,6 +489,7 @@ class LabelSmoother:
         # will ignore them in any case.
         labels.clamp_min_(0)
         nll_loss = log_probs.gather(dim=-1, index=labels)
+        import pdb;pdb.set_trace()
         # works for fp16 input tensor too, by internally upcasting it to fp32
         smoothed_loss = log_probs.sum(dim=-1, keepdim=True, dtype=torch.float32)
 

@@ -1907,8 +1907,7 @@ class Trainer:
 
         Subclass and override for custom behavior.
         """
-        import pdb;
-        pdb.set_trace()
+
 
         if self.label_smoother is not None and "labels" in inputs:
             labels = inputs.pop("labels")
