@@ -1879,6 +1879,7 @@ class Trainer:
             with autocast():
                 loss = self.compute_loss(model, inputs)
         else:
+            import pdb;pdb.set_trace()
             loss = self.compute_loss(model, inputs)
 
         if self.args.n_gpu > 1:
