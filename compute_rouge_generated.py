@@ -71,7 +71,7 @@ for instance in test_dataset:
     references.append(instance['highlights'])
 
 output_lns = []
-for x in open(save_path).readlines():
+for x in open(save_path):
     output_sents = nlp(x.rstrip())
     output_sents_text = []
     for sent in output_sents.sents:
