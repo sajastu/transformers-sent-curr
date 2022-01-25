@@ -1,6 +1,7 @@
 from datasets import load_dataset
 from datasets import load_metric
 from rouge_score import rouge_scorer, scoring
+ROUGE_KEYS = ["rouge1", "rouge2", "rougeL", "rougeLsum"]
 
 metric = load_metric("rouge")
 
