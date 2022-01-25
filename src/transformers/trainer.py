@@ -1879,7 +1879,6 @@ class Trainer:
             with autocast():
                 loss = self.compute_loss(model, inputs)
         else:
-            import pdb;pdb.set_trace()
             loss = self.compute_loss(model, inputs)
 
         if self.args.n_gpu > 1:
@@ -1913,6 +1912,8 @@ class Trainer:
         else:
             labels = None
         outputs = model(**inputs)
+        import pdb;
+        pdb.set_trace()
 
         # Save past state if it exists
         # TODO: this needs to be fixed and made cleaner later.
