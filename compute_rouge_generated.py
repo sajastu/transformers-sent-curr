@@ -17,7 +17,7 @@ def calculate_rouge(
     return_precision_and_recall=False,
     bootstrap_aggregation=True,
     newline_sep=True,
-) -> Dict:
+):
     """Calculate rouge using rouge_scorer package.
 
     Args:
