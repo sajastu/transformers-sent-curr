@@ -22,7 +22,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.p
     --max_grad_norm 0.1 \
     --eval_steps 4000 --save_steps 4000 \
     --train_file $DS_BASE_DIR/train.json \
-    --validation_file $DS_BASE_DIR/val.json \
+    --validation_file $DS_BASE_DIR/validation.json \
     --test_file $DS_BASE_DIR/test.json \
 
 #    --dataset_name cnn_dailymail \
