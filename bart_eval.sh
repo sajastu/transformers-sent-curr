@@ -16,6 +16,7 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --overwrite_output_dir \
     --predict_with_generate \
     --dataset_name cnn_dailymail \
-    --dataset_config "3.0.0"
+    --dataset_config "3.0.0" \
+    --load_best_model_at_end False
 
 #python post_stats/integrate_blink_preds.py
