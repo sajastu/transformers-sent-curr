@@ -88,7 +88,7 @@ for x in references:
 
 
 
-output_lns = [" . \n".join(x).lower() for x in output_lns]
-reference_lns = [" . \n".join(x).lower() for x in reference_lns][: len(output_lns)]
+output_lns = [" \n".join(x).lower() for x in output_lns]
+reference_lns = [" \n".join(x).lower() for x in reference_lns][: len(output_lns)]
 import pdb;pdb.set_trace()
 print(calculate_rouge(output_lns, reference_lns))
