@@ -441,7 +441,7 @@ class SuperLoss(nn.Module):
 
     def forward(self, loss):
 
-        l_i = self.loss_fct(logits, targets,).detach()
+        # l_i = self.loss_fct(logits, targets,).detach()
         sigma = self.sigma(l_i)
         loss = (loss - self.tau) * sigma + self.lam * (torch.log(sigma) ** 2)
         loss = loss.sum() / self.batch_size
@@ -474,7 +474,6 @@ class LabelSmoother:
         ignore_index (:obj:`int`, `optional`, defaults to -100):
             The index in the labels to ignore when computing the loss.
     """
-    super_loss = SuperLoss()
     epsilon: float = 0.1
     ignore_index: int = -100
 
@@ -491,6 +490,8 @@ class LabelSmoother:
         # will ignore them in any case.
         labels.clamp_min_(0)
         nll_loss = log_probs.gather(dim=-1, index=labels)
+        super_loss = SuperLoss()
+
         import pdb;pdb.set_trace()
         # works for fp16 input tensor too, by internally upcasting it to fp32
         smoothed_loss = log_probs.sum(dim=-1, keepdim=True, dtype=torch.float32)
