@@ -554,7 +554,7 @@ class TrainingArguments:
         },
     )
     label_smoothing_factor: float = field(
-        default=0.1, metadata={"help": "The label smoothing epsilon to apply (zero means no label smoothing)."}
+        default=0.0, metadata={"help": "The label smoothing epsilon to apply (zero means no label smoothing)."}
     )
     adafactor: bool = field(default=True, metadata={"help": "Whether or not to replace AdamW by Adafactor."})
     group_by_length: bool = field(

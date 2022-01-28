@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 
-#CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py \
-python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py \
+#python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py \
+CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py \
     --task_mode abstractive \
     --model_name_or_path facebook/bart-large \
     --do_train \
@@ -22,7 +22,7 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --eval_steps 4000 --save_steps 4000 \
     --dataset_name ccdv/cnn_dailymail \
     --dataset_config "3.0.0" \
-    --label_smoothing_factor 0.1 \
+    --label_smoothing_factor 0 \
     --lr_scheduler polynomial \
 
 #    --dataset_name cnn_dailymail \

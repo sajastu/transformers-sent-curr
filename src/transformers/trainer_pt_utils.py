@@ -493,7 +493,7 @@ class LabelSmoother:
         nll_loss = log_probs.gather(dim=-1, index=labels)
         nll_loss.masked_fill_(padding_mask, 0.0)
         # import pdb;pdb.set_trace()
-        nll_loss = self.super_loss(nll_loss)
+        # nll_loss = self.super_loss(nll_loss)
 
         num_active_elements = padding_mask.numel() - padding_mask.long().sum()
         nll_loss = nll_loss.sum() / num_active_elements
