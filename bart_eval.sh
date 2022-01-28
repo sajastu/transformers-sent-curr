@@ -7,7 +7,8 @@ export M_ID=reddit-lr3e5-sentDecoder-superloss-lambda0.9
 export SAVE_MODEL_DIR=/home/code-base/user_space
 #  --model_name_or_path $SAVE_MODEL_DIR/saved_models/$MODEL/$M_ID/checkpoint-20000/\
 
-python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
+#python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
+CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
     --model_name_or_path /saved_models/bart/bart-cnn/checkpoint-168000/ \
     --do_predict \
     --output_dir /saved_models/bart/bart-cnn/ \

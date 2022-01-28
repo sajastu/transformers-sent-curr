@@ -340,12 +340,11 @@ def main():
         # raw_datasets = load_dataset(
         #     'ccdv/cnn_dailymail', data_args.dataset_config_name, cache_dir=model_args.cache_dir
         # )
-
+        import pdb;pdb.set_trace()
     else:
         data_files = {}
         if data_args.train_file is not None:
             data_files["train"] = data_args.train_file
-
             extension = data_args.train_file.split(".")[-1]
         if data_args.validation_file is not None:
             data_files["validation"] = data_args.validation_file
