@@ -636,7 +636,7 @@ def main():
                 predictions = tokenizer.batch_decode(
                     predict_results.predictions, skip_special_tokens=True, clean_up_tokenization_spaces=True
                 )
-                predictions = [pred.relace('\n', ' ').strip() for pred in predictions]
+                predictions = [pred.replace('\n', ' ').strip() for pred in predictions]
                 output_prediction_file = os.path.join(training_args.output_dir, "generated_predictions.txt")
                 with open(output_prediction_file, "w") as writer:
                     # for j, p in enumerate(predictions):
