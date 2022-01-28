@@ -9,14 +9,14 @@ export SAVE_MODEL_DIR=/home/code-base/user_space
 
 #python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
 CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
-    --model_name_or_path /saved_models/bart/bart-cnn/checkpoint-168000/ \
+    --model_name_or_path /saved_models/bart/bart-cnn-checkpoint-168000/ \
     --do_predict \
     --output_dir /saved_models/bart/bart-cnn/ \
     --per_device_train_batch_size=2 \
     --per_device_eval_batch_size=8  \
     --overwrite_output_dir \
     --predict_with_generate \
-    --dataset_name cnn_dailymail \
+    --dataset_name  ccdv/cnn_dailymail \
     --dataset_config "3.0.0" \
     --load_best_model_at_end False
 
