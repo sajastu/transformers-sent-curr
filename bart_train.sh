@@ -20,10 +20,10 @@ python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summariza
     --predict_with_generate \
     --max_grad_norm 0.1 \
     --eval_steps 4000 --save_steps 4000 \
-    --dataset_name ccdv/cnn_dailymail \
-    --dataset_config "3.0.0" \
+    --dataset_name xsum \
     --label_smoothing_factor 0 \
     --lr_scheduler polynomial \
+#    --dataset_config "3.0.0" \
 
 #    --dataset_name cnn_dailymail \
 #    --dataset_config "3.0.0" \
