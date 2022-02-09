@@ -9,15 +9,15 @@ export SAVE_MODEL_DIR=/home/code-base/user_space
 
 #CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
 python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
-    --model_name_or_path /saved_models/bart/bart-cnn-checkpoint-168000/ \
+    --model_name_or_path /saved_models/bart/bart-xsum-woSmoothing/checkpoint-164000/ \
     --do_predict \
-    --output_dir /saved_models/bart/bart-cnn/ \
+    --output_dir /saved_models/bart/bart-xsum-woSmoothing/ \
     --per_device_train_batch_size=2 \
     --per_device_eval_batch_size=8  \
     --overwrite_output_dir \
     --predict_with_generate \
-    --dataset_name  ccdv/cnn_dailymail \
-    --dataset_config "3.0.0" \
+    --dataset_name  xsum \
     --load_best_model_at_end False
+#    --dataset_config "3.0.0" \
 
 #python post_stats/integrate_blink_preds.py
