@@ -9,7 +9,7 @@ export SAVE_MODEL_DIR=/home/code-base/user_space
 
 #CUDA_VISIBLE_DEVICES=0 python examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
 python -m torch.distributed.launch --nproc_per_node=8 examples/pytorch/summarization/run_summarization.py --task_mode abstractive\
-    --model_name_or_path /saved_models/bart/bart-xsum-woSmoothing/checkpoint-164000/ \
+    --model_name_or_path /saved_models/bart/bartCurr-xsum-woSmoothing/checkpoint-164000/ \
     --do_predict \
     --output_dir /saved_models/bart/bart-xsum-woSmoothing/ \
     --per_device_train_batch_size=2 \
